@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vh;
+    background-image: url(./photos/website\ background\ for\ product\ crud\ \ and\ dont\ write\ a\ text\ in\ the\ background\ and\ make\ it\ with\ teal\ and\ blue\ shades.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+:root {
+    /* Product Container Gradient */
+    --productbackground: linear-gradient(135deg, #01579b, #0077b6, #00b4d8, #48cae4, #90e0ef, #ade8f4, #caf0f8);
+    /* Smooth blue to cyan gradient */
+
+    /* General Background Color for the Product */
+    --pbackground-color: #00b4d8;
+    /* Light blue for product result background */
+
+    /* Table Colors */
+    --tablebackground-color: #e3f2fd;
+    /* Very light cyan for the table background */
+    --captionbackground-color: #0277bd;
+    /* Strong blue for caption */
+    --theadbackground-color: #0288d1;
+    /* Bright blue header for the table */
+    --trHoverbackground-color: #b3e5fc;
+    /* Light cyan hover effect for rows */
+    --trborder-bottom: 1px solid #ccc;
+    /* Soft gray border between rows */
+
+    /* Product View Colors */
+    --productViewbackground: linear-gradient(135deg, #b3e5fc, #4f83cc);
+    /* Light blue to dark blue gradient */
+
+    /* Borders */
+    --productContainerborder-left: 5px solid #ffffff;
+    /* White border for the container */
+    --productContainerborder-right: 5px solid #ffffff;
+    /* White border for the container */
+    --imgborder: 2px solid #b3e5fc;
+    /* Soft light blue border for product images */
+
+    /* Shadow for Table and Product View */
+    --tablebox-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow for table */
+    --productViewbox-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Shadow for product view */
+
+    /* Caption Text Color */
+    --captioncolor: white;
+    /* White text for captions */
+
+    /* Button Colors */
+    --button-background: #0277bd;
+    /* Blue background for buttons */
+    --button-text-color: white;
+    /* White text for buttons */
+    --button-hover-background: #0288d1;
+    /* Slightly lighter blue on hover */
+    --button-active-background: #01579b;
+    /* Darker blue on active */
+}
+
+
+h1 {
+    text-align: center;
+    transform: translate(53%, 50px);
+}
+
+.product_container {
+    text-align: center;
+    transform: translate(70%, 10%);
+    background: var(--productbackground);
+    width: 600px;
+    padding: 10px;
+    border-left: var(--productContainerborder-left);
+    border-right: var(--productContainerborder-right);
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.product_properties {
+    display: flex;
+     /* Stack elements vertically */
+     /* Align everything to the left */
+}
+
+.product_container .name,
+.type {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 30%;
+}
+
+/* Optional: Add a slight margin to the p tags */
+.product_container .product_properties p {
+    margin-bottom: 5px; 
+    width: 45px;
+    
+}
+
+/* Make invalid input fields have a red border */
+.product_container .invalid {
+    border-color: #d32f2f;
+}
+
+.product_container h3 {
+    margin: 10px;
+}
+
+.product_container .product_inputs {
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.row {
+    width: 50%;
+}
+
+.row2 {
+    width: 50%;
+}
+
+.row3 {
+    display: flex;
+}
+
+.product_container .product_inputs input,
+p {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.product_container .product_result {
+    margin: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.product_container .product_result p {
+    margin: 2px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 200px;
+    background-color: var(--pbackground-color);
+}
+
+.product_container .buttons {
+    text-align: center;
+}
+
+.product_container .add,
+.product_container .remove,
+.product_container .edit,
+.product_container .cancel {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+    cursor: pointer;
+    margin-top: 15px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    font-size: 1.1em;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product_container .add:hover,
+.product_container .remove:hover,
+.product_container .edit:hover,
+.product_container .cancel:hover {
+    background-color: var(--button-hover-background);
+    transform: scale(1.05);
+}
+
+.product_container .add:active,
+.product_container .remove:active,
+.product_container .edit:active,
+.product_container .cancel:active {
+    background-color: var(--button-active-background);
+}
+
+/* Custom styles for the Edit and Cancel buttons */
+.product_container .edit {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    border-radius: 15px;
+}
+
+.product_container .cancel {
+    background-color: #f44336;
+    /* Red */
+    color: white;
+    border-radius: 15px;
+}
+
+/* Hover and active states for Edit and Cancel */
+.product_container .edit:hover {
+    background-color: #45a049;
+    /* Darker green */
+}
+
+.product_container .cancel:hover {
+    background-color: #e53935;
+    /* Darker red */
+}
+
+.product_container .edit:active {
+    background-color: #388e3c;
+    /* Even darker green */
+}
+
+.product_container .cancel:active {
+    background-color: #c62828;
+    /* Even darker red */
+}
+
+.list {
+    width: 800px;
+    height: auto;
+    transform: translateX(43%);
+    margin-bottom: 100px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--tablebackground-color);
+    box-shadow: var(--tablebox-shadow);
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    background-color: var(--captionbackground-color);
+    color: var(--captioncolor);
+    text-align: left;
+}
+
+thead {
+    background-color: var(--theadbackground-color);
+    color: var(--captioncolor);
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+tbody tr {
+    border-bottom: var(--trborder-bottom);
+}
+
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+tbody tr:hover {
+    background-color: var(--trHoverbackground-color);
+}
+
+.list_i {
+    cursor: pointer;
+}
+
+.product_view {
+    width: 350px;
+    height: auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--productViewbackground);
+    box-shadow: var(--productViewbox-shadow);
+    font-family: 'Roboto', sans-serif;
+    transform: translate(95%, -110%);
+    display: none;
+    margin: auto;
+    position: relative;
+}
+
+.product_view .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #ff0000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product_view .close-icon:hover {
+    color: #ba181b;
+}
+
+.product_view h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.product_view .product_info {
+    margin-bottom: 20px;
+}
+
+.product_view .product_info span {
+    font-weight: 600;
+    margin-right: 10px;
+    color: #4e4e4e;
+    font-size: 14px;
+}
+
+.product_view .product_info .info {
+    color: #F5F5F5;
+}
+
+.product_view .product_info p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 16px;
+    width: auto;
+}
+
+.product_view img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: var(--imgborder);
+}
+
+.none {
+    display: none;
+}
+.row3 + .validation{
+    display: flex;
+    margin-left: 40px;
+    
+}
+
+.product_container .product_inputs input {
+    width: 70%;
+    margin: 5px 5px;
+    padding: 6px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.product_container .product_inputs p {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: normal;
+    text-align: left;
+    
+}
+
+.product_container .validation {
+    display: block;
+    margin-top: 5px;
+    font-size: 1em;
+    color: #d32f2f;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.product_container .invalid {
+    border-color: #d32f2f;
+}

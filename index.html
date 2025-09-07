@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Product CRUD</h1>
+    <div class="product_container">
+        <h3>product properties</h3>
+
+        <div class="product_properties">
+            <p>name :</p><input type="text" placeholder="product name" class="name">
+            <p>type :</p><input type="text" placeholder="product type" class="type">
+        </div>
+        <div class="row3">
+        </div>
+        <hr>
+
+        <h3>product cost</h3>
+
+        <div class="product_inputs">
+
+            <div class="row"> 
+            <p>cost : </p><input type="number" placeholder="product cost" class="all_inputs">
+            <p>my profit : </p><input type="number" placeholder="profit you want to earn" class="all_inputs">
+            <p>discount: </p><input type="number" placeholder="discount %" class="all_inputs">
+            </div>
+            <div class="row2">
+            <p>tax : </p><input type="number" placeholder="tax %" class="all_inputs">
+           
+            <p class="quantityP ">quantity: </p><input type="number" placeholder="your product quantity" class="all_inputs quantity">
+            
+            <p>image : </p><input type="text" placeholder="image url" class="all_inputs">
+            
+            </div> 
+        </div>
+        <hr>
+
+        <h3>product result</h3>
+        <div class="product_result">
+            <p>sale cost : 0$</p>
+            <p>Net profit : 0$</p>
+            <p>discount cost : 0$</p>
+            <p>tax cost : 0$</p>
+        </div>
+        <hr>
+
+        <div class="buttons">
+            <button class="add">add product</button>
+            <button class="remove">remove all</button>
+        </div>
+
+
+    </div>
+
+    <div class="list">
+        <table>
+            <caption>Product list</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th></th>
+                    <th> </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="table_body">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="product_view">
+    </div>
+
+    <script src="main.js"></script>
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
